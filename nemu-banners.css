@@ -1,0 +1,217 @@
+/* All promotion artwork is a complete transparent scene, contained in its column.
+   Text remains native HTML, so it stays crisp and can wrap on small screens. */
+#belanja #promoCarousel {
+  --promo-bg: #f0eafa;
+  --promo-border: #e8dff3;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  isolation: isolate;
+  min-height: 200px;
+  height: auto;
+  margin: 18px 0 0;
+  padding: 24px;
+  border: 1px solid var(--promo-border);
+  border-radius: 20px;
+  background: var(--promo-bg) !important;
+  color: #352447;
+  overflow: clip;
+  box-shadow: none;
+}
+#belanja #promoCarousel[data-slide="1"] { --promo-bg: #f6f0e7; --promo-border: #eee5d8; }
+#belanja #promoCarousel[data-slide="2"] { --promo-bg: #eeedf8; --promo-border: #e3e1f0; }
+#belanja #promoCarousel::before, #belanja #promoCarousel::after { display: none; }
+#belanja #promoCarousel .deal-copy {
+  position: static;
+  z-index: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  height: auto;
+  padding: 0;
+}
+#belanja #promoCarousel .deal-kicker {
+  display: block;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  color: #877291;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: .2px;
+}
+#belanja #promoCarousel h2 {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.22;
+  letter-spacing: -.6px;
+  word-spacing: normal;
+  color: #352447;
+  text-wrap: initial;
+}
+#belanja #promoCarousel h2 span { display: block; font-size: 18px; font-weight: 700; letter-spacing: -.3px; }
+#belanja #promoCarousel h2 strong { display: block; margin-top: 3px; font-size: 28px; font-weight: 800; }
+#belanja #promoCarousel[data-slide="0"] h2 strong { color: #704bfd; font-size: 42px; line-height: 1; letter-spacing: -1.2px; }
+#belanja #promoCarousel .cta-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  max-width: 100%;
+  min-height: 36px;
+  margin: 4px 0 0;
+  padding: 9px 12px;
+  background: #704bfd;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: none;
+  color: white;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: 0;
+  white-space: normal;
+  text-align: left;
+}
+#belanja #promoCarousel .cta-white > span {
+  position: static;
+  display: inline;
+  flex: none;
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  line-height: 1;
+  transform: none;
+}
+#belanja #promoCarousel > img {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  justify-self: center;
+  width: 100%;
+  max-width: 260px;
+  height: 174px;
+  object-fit: contain;
+  object-position: center;
+  border: 0;
+  border-radius: 0;
+  mask-image: none;
+  -webkit-mask-image: none;
+  opacity: 1;
+  transform: none;
+  filter: none;
+  box-shadow: none;
+}
+.nemu-promo-controls { display: flex; justify-content: center; align-items: center; height: 24px; margin: 2px 0 12px; }
+#belanja .nemu-promo-controls .promo-pagination,
+#makan .food-promo-dots {
+  display: flex;
+  position: static;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: auto;
+  min-width: 0;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  transform: none;
+}
+#belanja .promo-pagination button, #makan .food-promo-dots button {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+}
+#belanja .promo-pagination button::before, #makan .food-promo-dots button::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background: #d3c9df;
+}
+#belanja .promo-pagination button[aria-current="true"]::before,
+#makan .food-promo-dots button[aria-current="true"]::before { width: 18px; background: #704bfd; }
+
+#makan .food-promos { margin: 16px 0 12px; }
+#makan .food-promo-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border-radius: 20px; }
+#makan .food-promo-track::-webkit-scrollbar { display: none; }
+#makan .food-promo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 0;
+  min-height: 200px;
+  height: auto;
+  padding: 24px;
+  border: 1px solid #f0e5d8;
+  border-radius: 20px;
+  background: #fff3e5;
+  scroll-snap-align: start;
+  overflow: clip;
+  isolation: isolate;
+}
+#makan .food-promo-coffee { background: #f2ece6; border-color: #eae2d9; }
+#makan .food-promo-reward { background: #f2ecfc; border-color: #e8dff3; }
+#makan .food-promo > div { position: static; min-width: 0; width: auto; }
+#makan .food-promo > div > span { display: block; margin: 0 0 7px; color: #917a68; font-size: 9px; font-weight: 650; line-height: 1.4; letter-spacing: .3px; }
+#makan .food-promo h2 { margin: 0 0 7px; color: #352447; font-size: 24px; line-height: 1.25; letter-spacing: -.6px; }
+#makan .food-promo p { max-width: 100%; margin: 0 0 12px; color: #89798f; font-size: 11px; line-height: 1.5; }
+#makan .food-promo button { display: inline-flex; align-items: center; gap: 10px; max-width: 100%; min-height: 36px; padding: 9px 12px; border: 0; border-radius: 10px; background: #704bfd; color: #fff; font-size: 11px; font-weight: 750; line-height: 1.4; text-align: left; }
+#makan .food-promo button b { font-size: 16px; line-height: 1; flex: none; }
+#makan .food-promo img { position: static; inset: auto; width: 100%; max-width: 250px; height: 174px; justify-self: center; object-fit: contain; object-position: center; border: 0; border-radius: 0; box-shadow: none; transform: none; }
+#makan .food-promo-dots { margin-top: 2px; }
+
+@media (max-width: 680px) {
+  #belanja #promoCarousel { min-height: 166px; padding: 16px; gap: 4px; border-radius: 18px; }
+  #belanja #promoCarousel .deal-copy { gap: 7px; }
+  #belanja #promoCarousel .deal-kicker { font-size: 9px; }
+  #belanja #promoCarousel h2 span { font-size: 16px; }
+  #belanja #promoCarousel h2 strong { font-size: clamp(19px, 5.2vw, 23px); }
+  #belanja #promoCarousel[data-slide="0"] h2 strong { font-size: 36px; }
+  #belanja #promoCarousel .cta-white { min-height: 34px; padding: 8px 10px; font-size: 10px; gap: 8px; }
+  #belanja #promoCarousel > img { height: 140px; }
+  #makan .food-promos { margin-top: 14px; }
+  #makan .food-promo { min-height: 172px; padding: 16px; gap: 4px; border-radius: 18px; }
+  #makan .food-promo > div > span { font-size: 8px; margin-bottom: 6px; }
+  #makan .food-promo h2 { font-size: 19px; line-height: 1.28; letter-spacing: -.4px; }
+  #makan .food-promo p { font-size: 10px; margin-bottom: 10px; }
+  #makan .food-promo button { min-height: 34px; padding: 8px 10px; font-size: 10px; gap: 8px; }
+  #makan .food-promo img { height: 140px; }
+}
+@media (max-width: 360px) {
+  #belanja #promoCarousel, #makan .food-promo { padding: 14px; }
+  #belanja #promoCarousel h2 span { font-size: 14px; }
+  #belanja #promoCarousel h2 strong { font-size: 18px; }
+  #belanja #promoCarousel[data-slide="0"] h2 strong { font-size: 34px; }
+  #belanja #promoCarousel > img, #makan .food-promo img { height: 126px; }
+  #belanja #promoCarousel .cta-white, #makan .food-promo button { gap: 6px; padding-left: 9px; padding-right: 9px; }
+  #makan .food-promo h2 { font-size: 17px; }
+}

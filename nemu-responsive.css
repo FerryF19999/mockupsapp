@@ -1,0 +1,236 @@
+/* Responsive sizing shared by the marketplace, diary, account and dialogs.
+   Keep this sheet last so each mobile component has one sizing contract. */
+.nx :is(button, input, select, textarea) { font-family: inherit; }
+.nx-head > div, .nx-hero > div, .nx-row > div, .nx-campaign > div,
+.nx-referral-banner > div, .nx-account-group button, .nx-program-entries > button > div,
+.resto-body, .nx-find-product > div { min-width: 0; }
+.nx-hero h2, .nx-account-group button, .nx-entry > div,
+.profile-card h1, .nx-find-product b { overflow-wrap: anywhere; }
+.nx-hero img, .nx-campaign img, .nx-referral-banner img { flex-shrink: 0; }
+.nx-dialog-close, .nx-program-close { display: grid; place-items: center; line-height: 1; }
+body:has(dialog[open]), body:has(.modal.open) { overflow: hidden; }
+
+/* Daily summary: one compact card with aligned metrics and separate actions. */
+#nxHealth .nx-summary { padding: 16px; margin: 16px 0 12px; border-radius: 18px; }
+#nxHealth .nx-summary-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+#nxHealth .nx-summary-header h2 { margin: 0; font-size: 16px; line-height: 1.4; letter-spacing: -.35px; }
+#nxHealth .nx-summary-header .nx-link { display: inline-flex; align-items: center; gap: 5px; flex: none; min-height: 32px; padding: 4px 0 4px 8px; font-size: 11px; }
+#nxHealth .nx-summary-body { display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: center; gap: 24px; }
+#nxHealth .nx-summary-energy { display: grid; justify-items: center; gap: 6px; }
+#nxHealth .nx-summary-ring { width: 84px; height: 84px; padding: 6px; border-radius: 50%; background: conic-gradient(#704bfd var(--p), #f0eafa 0); }
+#nxHealth .nx-summary-ring > div { display: flex; height: 100%; flex-direction: column; justify-content: center; align-items: center; gap: 2px; border-radius: 50%; background: #fff; }
+#nxHealth .nx-summary-ring strong { max-width: 100%; color: #352447; font-size: 24px; font-weight: 750; line-height: 1.1; letter-spacing: -.7px; font-variant-numeric: tabular-nums; }
+#nxHealth .nx-summary-ring span { color: #81718c; font-size: 9px; line-height: 1.3; }
+#nxHealth .nx-summary-metrics { display: grid; gap: 13px; min-width: 0; margin: 0; }
+#nxHealth .nx-summary-metrics dt { color: #81718c; font-size: 11px; line-height: 1.4; }
+#nxHealth .nx-summary-metrics dd { margin: 3px 0 0; color: #352447; font-size: 16px; font-weight: 700; line-height: 1.25; font-variant-numeric: tabular-nums; }
+#nxHealth .nx-summary-metrics dd span { font-size: 12px; font-weight: 500; }
+#nxHealth .nx-summary-footer { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 10px; padding-top: 8px; border-top: 1px solid #f0eaf5; }
+#nxHealth .nx-summary-footer p { margin: 0; color: #81718c; font-size: 10px; line-height: 1.5; }
+#nxHealth .nx-summary-footer .nx-link { flex: none; min-height: 28px; padding: 5px 0 5px 6px; font-size: 10px; font-weight: 650; }
+
+@media (max-width: 680px) {
+  html { scrollbar-width: none; }
+  html::-webkit-scrollbar { display: none; }
+  .main { padding: 0 16px calc(100px + env(safe-area-inset-bottom)); }
+  .view { min-width: 0; }
+  .section-head { align-items: center; gap: 12px; }
+  .section-head > div { min-width: 0; }
+  .section-head .link-btn { flex-shrink: 0; font-size: 11px; }
+  .main > .topbar { column-gap: 6px; }
+  .main > .topbar #askNemu { max-width: none; min-height: 36px; }
+  .main > .topbar #askNemu .nemu-speech { font-size: 10px; }
+
+  /* Health: short navigation and separate, readable heading/action columns. */
+  #nxHealth .nx-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: end; margin: 12px 0 16px; }
+  #nxHealth .nx-head h1 { font-size: clamp(22px, 5.8vw, 25px); line-height: 1.25; margin: 5px 0 0; letter-spacing: -.7px; }
+  #nxHealth .nx-head .nx-link { font-size: 11px; font-weight: 700; line-height: 1.3; white-space: nowrap; padding: 8px 0 4px; }
+  #nxHealth .nx-overline { font-size: 9px; letter-spacing: 1.1px; }
+  #nxHealth .nx-nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3px; margin: 0 0 16px; padding: 4px; border-radius: 14px; }
+  #nxHealth .nx-nav button { min-width: 0; min-height: 40px; padding: 8px 2px; font-size: 12px; line-height: 1.3; white-space: nowrap; border-radius: 10px; }
+  #nxHealth .nx-first { padding: 12px 14px; margin: 0 0 16px; border-radius: 17px; }
+  #nxHealth .nx-first-top > span { width: 28px; height: 30px; }
+  #nxHealth .nx-countdown { font-size: 14px; letter-spacing: .6px; padding: 7px 10px; border-radius: 9px; }
+  #nxHealth .nx-first h3 { font-size: 14px; line-height: 1.4; margin: 7px 0 3px; }
+  #nxHealth .nx-first p { font-size: 11px; line-height: 1.5; }
+  #nxHealth .nx-first progress { height: 5px; margin-top: 9px; }
+  #nxHealth .nx-first small { font-size: 10px; }
+  #nxHealth .nx-hero { padding: 16px; gap: 10px; border-radius: 18px; }
+  #nxHealth .nx-hero h2 { font-size: 20px; line-height: 1.3; letter-spacing: -.5px; margin: 8px 0; }
+  #nxHealth .nx-hero p { font-size: 11px; line-height: 1.65; }
+  #nxHealth .nx-hero img { width: 82px; height: 112px; }
+  #nxHealth .nx-section-title { font-size: 17px; margin: 20px 0 10px; }
+  #nxHealth .nx-card { padding: 16px; margin: 12px 0; border-radius: 18px; }
+  #nxHealth .nx-card h3 { font-size: 15px; }
+  #nxHealth .nx-row { gap: 10px; }
+  #nxHealth .nx-row > h2 { font-size: 20px; margin: 8px 0; }
+  #nxHealth #nxDate { min-width: 0; width: 132px; font-size: 12px; }
+  #nxHealth .nx-ring { width: 112px; height: 112px; padding: 8px; }
+  #nxHealth .nx-ring strong { font-size: 23px; }
+  #nxHealth .nx-metrics { gap: 10px; }
+  #nxHealth .nx-metrics b { font-size: 14px; }
+  #nxHealth .nx-link { font-size: 12px; }
+  #nxHealth .nx-btn { font-size: 12px; min-height: 40px; padding: 10px 14px; }
+  #nxHealth .nx-photo { padding: 14px; gap: 10px; border-radius: 17px; margin: 12px 0; }
+  #nxHealth .nx-photo > span:first-child { padding: 6px; font-size: 22px; flex: none; }
+  #nxHealth .nx-photo b { font-size: 14px; }
+  #nxHealth .nx-photo small { font-size: 10px; line-height: 1.5; }
+  #nxHealth .nx-week { gap: 4px; }
+  #nxHealth .nx-week button { min-width: 0; }
+  #nxHealth .nx-meal > div { min-width: 0; }
+  #nxHealth .nx-mini { flex: none; }
+  #nxHealth .nx-bar-chart { gap: 7px; }
+  #nxHealth .nx-profile-link { font-size: 12px; gap: 12px; text-align: left; }
+
+  /* Account: compact identity and promotion rows, not full hero cards. */
+  #profilePage #profileBack { font-size: 12px; padding: 6px 0; }
+  #profilePage .nx-account-heading { margin: 10px 0 12px; align-items: center; gap: 12px; }
+  #profilePage .nx-account-heading h1 { font-size: 23px; line-height: 1.25; }
+  #profilePage .nx-account-heading > span { font-size: 10px; }
+  #profilePage > .profile-card { padding: 6px 0; gap: 12px; margin: 0 0 14px; }
+  #profilePage > .profile-card .profile-initial { width: 46px; height: 46px; border-width: 3px; border-radius: 15px; font-size: 22px; flex: none; }
+  #profilePage > .profile-card h1 { font-size: 18px; margin: 0 0 3px; }
+  #profilePage > .profile-card p { font-size: 11px; line-height: 1.5; margin: 0; }
+  #profilePage > .profile-card .nx-mini { width: 36px; height: 36px; padding: 8px; flex: none; font-size: 14px; }
+  #profilePage .nx-referral-banner { padding: 12px 14px; gap: 10px; margin: 0 0 12px; border-radius: 17px; }
+  #profilePage .nx-referral-banner > span { display: none; }
+  #profilePage .nx-referral-banner > div { flex: 1; }
+  #profilePage .nx-referral-banner small { font-size: 8px; letter-spacing: .5px; }
+  #profilePage .nx-referral-banner h2 { font-size: 14px; line-height: 1.4; letter-spacing: -.25px; margin: 4px 0; }
+  #profilePage .nx-referral-banner p { font-size: 10px; line-height: 1.5; }
+  #profilePage .nx-referral-banner img { width: 48px; height: 58px; }
+  #profilePage > .nx-campaign, #nxHealth .nx-campaign { gap: 10px; padding: 12px 14px; margin: 12px 0; border-radius: 17px; }
+  #profilePage > .nx-campaign img, #nxHealth .nx-campaign img { width: 36px; height: 44px; }
+  #profilePage > .nx-campaign b, #nxHealth .nx-campaign b { font-size: 14px; line-height: 1.4; margin: 4px 0; }
+  #profilePage > .nx-campaign small, #nxHealth .nx-campaign small { font-size: 8px; }
+  #profilePage > .nx-campaign p, #nxHealth .nx-campaign p { font-size: 10px; line-height: 1.5; }
+  #profilePage .nx-account-label { font-size: 12px; margin: 20px 0 8px; }
+  #profilePage .nx-account-group { padding: 0 14px; border-radius: 16px; }
+  #profilePage .nx-account-group button { font-size: 12px; padding: 12px 0; gap: 10px; min-height: 46px; }
+  #profilePage .nx-account-group button > span { flex: 0 0 22px; }
+  #profilePage .nx-account-group svg { width: 18px; height: 18px; }
+
+  /* Banner copy stays in its own column; controls get their own bottom row. */
+  #belanja > .nx-campaign { padding: 48px 12px 12px; margin-bottom: 20px; }
+  #belanja > .nx-campaign > .nx-seven-timer { font-size: 12px; padding: 6px 8px; right: 12px; }
+  #belanja > .nx-campaign b { font-size: 14px; }
+  #belanja > .nx-campaign small { font-size: 8px; }
+
+  #makan .heading h1 { font-size: 27px; line-height: 1.22; letter-spacing: -.8px; }
+  #makan .food-categories { gap: 6px; }
+  #makan .nx-cuisine-art { width: 56px; height: 56px; border-radius: 18px; }
+  #makan .food-categories button { min-width: 0; }
+  #makan .food-categories button b { font-size: 11px; }
+  #makan .resto-card { grid-template-columns: 84px minmax(0, 1fr); }
+  #makan .resto-body { padding-left: 10px; }
+  #makan .food-list-heading { flex-wrap: wrap; gap: 8px; }
+
+  #chat > .heading h1 { font-size: 24px; }
+  #chat > .heading .sub { font-size: 11px; }
+  #chat .friend-space { min-height: 0; border-radius: 19px; }
+  #chat .friend-intro { width: 66%; padding: 16px; }
+  #chat .friend-eyebrow { font-size: 8px; letter-spacing: .8px; }
+  #chat .friend-intro h2 { font-size: 21px; line-height: 1.3; letter-spacing: -.4px; margin: 8px 0; }
+  #chat .friend-intro p { font-size: 10px; line-height: 1.6; margin-bottom: 12px; }
+  #chat .friend-intro p br { display: none; }
+  #chat .friend-start { font-size: 11px; padding: 9px 12px; min-height: 36px; gap: 12px; }
+  #chat .friend-portrait { width: 35%; height: 150px; right: 0; }
+  #chat .friend-portrait img { height: 95%; bottom: 0; }
+  #chat .friend-halo { width: 120px; height: 120px; }
+  #chat .friend-note { display: none; }
+  #chat .friend-prompts button { min-width: 0; }
+  #chatRoom .room-mascot { width: 80px; height: 80px; margin-bottom: 12px; }
+  #chatRoom .room-welcome h2 { font-size: 22px; line-height: 1.3; }
+  #chatRoom .room-welcome p { font-size: 12px; margin-bottom: 16px; }
+  #chatRoom .room-starters { margin-top: 16px; }
+  #chatRoom .room-starters button { padding: 10px 12px; font-size: 11px; }
+  #chatRoom .chat-messages { scrollbar-width: none; }
+  #chatRoom .chat-compose { border-radius: 18px; padding: 5px; margin-bottom: max(10px, env(safe-area-inset-bottom)); }
+  #chatRoom .chat-compose input { font-size: 16px; min-width: 0; }
+  #restoPage .resto-menu-item { gap: 10px; padding: 10px; }
+  #restoPage .resto-menu-item img { width: 60px; height: 60px; flex: none; }
+  #restoPage .resto-menu-item > div { min-width: 0; }
+  #restoPage .resto-menu-item button { flex: 0 0 34px; }
+  #restoPage .resto-hero { height: 160px; width: 100%; object-fit: cover; border-radius: 18px; }
+  #restoPage .resto-title h1 { font-size: 23px; line-height: 1.3; }
+  #categoryResults .category-promo { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); padding: 14px 16px; border-radius: 18px; }
+  #categoryResults .category-promo h2 { font-size: 18px; line-height: 1.3; margin: 8px 0 12px; }
+  #categoryResults .category-promo p { display: none; }
+  #categoryResults .category-promo img { max-height: 112px; }
+  #categoryResults .category-promo button { padding: 8px 10px; min-height: 34px; }
+  #shoppingCart .cart-empty { padding: 22px 18px; border-radius: 18px; }
+  #shoppingCart .cart-empty img { height: 72px; }
+  #shoppingCart .cart-empty h2 { font-size: 18px; line-height: 1.4; margin: 12px 0; }
+  #shoppingCart .cart-empty p { font-size: 12px; }
+  #shoppingCart .cart-empty button { font-size: 12px; padding: 10px 16px; min-height: 38px; }
+  .shop-cart-row { gap: 10px; padding: 12px; }
+  .shop-cart-row img { width: 64px; height: 78px; flex: none; }
+  body:has(:is(#detailPage, #tryonPage, #restoPage, #profilePage, #nxChallenge, #shoppingCart).active) #nxBuddy,
+  body:has(#sehat.active) #nxBuddy { display: none; }
+
+  /* Full-height chat and bounded sheets also work in short viewports. */
+  #nxFinder { padding: max(12px, env(safe-area-inset-top)) 16px max(10px, env(safe-area-inset-bottom)); }
+  #nxFinder header { gap: 8px; padding-bottom: 10px; }
+  #nxFinder header b { font-size: 18px; }
+  #nxFinder .nx-finder-welcome { padding: 16px 0; }
+  #nxFinder .nx-finder-welcome h2 { font-size: 21px; line-height: 1.35; }
+  #nxFinder .nx-finder-welcome p { font-size: 12px; }
+  #nxFinder .nx-finder-chips { gap: 6px; padding: 8px 0; }
+  #nxFinder .nx-finder-chips button { padding: 9px 10px; font-size: 11px; }
+  #nxFinder #nxFinderForm { min-height: 50px; grid-template-columns: minmax(0, 1fr) 36px; gap: 8px; padding: 6px 8px 6px 12px; border-radius: 18px; }
+  #nxFinder #nxFinderForm textarea { font-size: 16px; line-height: 24px; }
+  #nxFinder .nx-finder-note { font-size: 9px; margin: 8px 0 0; }
+  .nx-dialog:not(.nx-intro) { padding: 20px; border-radius: 20px; max-height: calc(100dvh - 24px); }
+  #nxDialog.nx-intro { height: 100dvh; min-height: 0; padding: 0; overflow: hidden; }
+  #nxDialog.nx-intro #nxDialogBody { height: 100%; min-height: 0; padding: 0 20px; }
+  .nx-intro .nx-intro-content { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+  .nx-intro .nx-intro-top, .nx-intro .nx-progress, .nx-intro .nx-step-label { flex-shrink: 0; }
+  .nx-intro .nx-intro-bottom { position: static; flex: none; padding: 12px 0 max(12px, env(safe-area-inset-bottom)); }
+  .nx-intro .nx-welcome-art, .nx-intro .nx-consent-art { margin-left: -20px; margin-right: -20px; }
+  .nx-dialog h2 { font-size: 22px; padding-right: 15px; }
+  .nx-form :is(input, select), .nx-finder input { font-size: 16px; min-width: 0; }
+  .nx-actions-sheet { padding: 12px 16px calc(20px + env(safe-area-inset-bottom)); border-radius: 22px 22px 0 0; max-height: calc(100dvh - 16px); }
+  .nx-sheet-banner { gap: 10px; padding: 10px 12px; margin: 12px 0 16px; }
+  .nx-sheet-banner img { width: 48px; height: 58px; }
+  .nx-sheet-banner b { font-size: 15px; }
+  .nx-action-icons span { width: 48px; height: 48px; }
+  .nx-action-tiles button { font-size: 11px; }
+  .nx-action-tiles { margin-top: 16px; }
+  .nx-actions-sheet > .nx-muted { margin-top: 14px !important; margin-bottom: 0; }
+  .nx-program-popup { padding: 20px; border-radius: 20px; }
+  .nx-program-popup h2 { font-size: 21px; }
+  .nx-program-art { height: 115px; }
+  .nc-deadline { flex-wrap: wrap; }
+  .nc-deadline b { white-space: nowrap; }
+}
+
+@media (max-width: 360px) {
+  .main { padding-left: 12px; padding-right: 12px; }
+  #nxHealth .nx-head { gap: 8px; }
+  #nxHealth .nx-head h1 { font-size: 21px; }
+  #nxHealth .nx-head .nx-link { font-size: 10px; }
+  #nxHealth .nx-nav button { font-size: 11px; }
+  #nxHealth .nx-hero { padding: 14px; }
+  #nxHealth .nx-hero img { width: 70px; height: 100px; }
+  #nxHealth .nx-ring { width: 98px; height: 98px; }
+  #nxHealth .nx-card { padding: 14px; }
+  #nxHealth .nx-summary-header { gap: 8px; }
+  #nxHealth .nx-summary-header h2 { font-size: 15px; }
+  #nxHealth .nx-summary-body { grid-template-columns: 88px minmax(0, 1fr); gap: 16px; }
+  #nxHealth .nx-summary-footer { gap: 6px; }
+  #nxHealth .nx-summary-footer p { font-size: 9px; }
+  #nxFinder header { gap: 5px; }
+}
+
+@media (max-height: 600px) and (max-width: 680px) {
+  #nxFinder .nx-finder-welcome > span { width: 36px; height: 36px; margin-bottom: 12px; font-size: 24px; }
+  #nxFinder .nx-finder-welcome { padding: 8px 0; }
+  #nxFinder .nx-finder-body { padding: 8px 0; }
+  .nx-intro .nx-welcome-art { min-height: 170px; height: 34dvh; }
+  .nx-intro .nx-welcome-copy { padding-top: 18px; }
+  .nx-intro h2 { font-size: 25px; }
+  .nx-intro .nx-name-art { margin: 12px 0; }
+  .nx-intro .nx-name-art img { width: 82px; height: 100px; }
+  .nx-intro .nx-muted { margin-bottom: 12px; }
+  .nx-intro .nx-choice { padding: 12px; margin: 8px 0; }
+}

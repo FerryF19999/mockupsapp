@@ -84,8 +84,6 @@
 #belanja .deal-banner img{inset:auto -8px 0 auto;width:52%;height:96%;object-fit:cover;object-position:center top;mask-image:none;opacity:1;z-index:1}
 #belanja .cta-white{margin:0;border-radius:30px;padding:7px 7px 7px 17px;gap:15px;background:#17210c;font-size:13px;font-weight:600}
 #belanja .cta-white span{width:31px;height:31px;font-size:24px;background:#f2f1ec}
-#belanja .deal-banner .promo-pagination{position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);width:112px;height:19px;padding:7px 0 0;display:flex;align-items:center;justify-content:center;gap:5px;background:#faf9f7;border-radius:65% 65% 0 0;z-index:3}
-.promo-pagination span{width:7px;height:7px;border-radius:9px;background:#d7d7d2}.promo-pagination .selected{width:25px;background:#b7e348}
 @media(max-width:680px){#belanja .deal-banner{min-height:0;height:184px;padding:20px 16px;border-radius:18px;margin:9px 0 20px}#belanja .deal-banner .deal-copy{width:59%;padding-top:0}#belanja .deal-kicker{font-size:8px;padding:4px 9px;margin-bottom:9px}#belanja .deal-banner h2{font-size:17px;line-height:1.25;margin:0 0 17px;letter-spacing:-.3px}#belanja .deal-banner img{height:96%;width:53%;right:-8px;mask-image:none}#belanja .cta-white{padding:5px 5px 5px 12px;gap:8px;font-size:10px;margin:0}#belanja .cta-white span{width:26px;height:26px;font-size:20px}}
 
 /* Health introduction, matching the supplied green/white scanner layout. */
@@ -114,15 +112,7 @@ body.health-onboarding-active .health-onboarding{max-width:480px;margin:0 auto;m
 #healthNextHint{order:3;font-size:9px;color:#909892;margin:0}
 @media(min-width:681px){body.health-onboarding-active .health-onboarding{box-shadow:0 0 70px #0e614e12}.health-onboard-title h1{font-size:36px}}
 @media(max-height:690px){.health-onboard-title{padding-top:30px;min-height:195px}.health-onboard-title h1{font-size:28px}.onboard-illustration{min-height:200px}.health-onboard-footer{padding-top:10px}.onboard-dots{padding:12px 0 0}}
-
-#promoCarousel{touch-action:pan-y;overflow:clip}
-#belanja #promoCarousel .promo-pagination{height:32px;width:128px;padding:3px 8px 0;gap:0;align-items:center}
-.promo-pagination button{display:grid;place-items:center;width:35px;height:29px;padding:0;border:0;background:transparent;border-radius:8px}
-.promo-pagination button:before{content:"";width:7px;height:7px;border-radius:8px;background:#d7d7d2;transition:width .18s,background .18s}
-.promo-pagination button[aria-current="true"]:before{width:25px;background:#b7e348}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-#promoCarousel[data-slide="1"]{background:#c6b5ed}
-#promoCarousel[data-slide="2"]{background:#f0cf84}
 
 #belanja .category-tiles .category-art{width:46px;height:46px;background:transparent;overflow:visible;border-radius:0}
 #belanja .category-tiles .category-art img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 2px #31244412)}
@@ -144,7 +134,6 @@ body.health-onboarding-active .health-onboarding{max-width:480px;margin:0 auto;m
 #belanja .category-section:not(.expanded) .category-all-option{display:none}
 
 /* Shopping refinements: mascot and stacked arrivals. */
-#belanja #promoCarousel > img{object-fit:contain;object-position:center bottom;width:48%;height:94%;right:3px;bottom:0}
 #belanja #newProducts{grid-template-columns:minmax(0,1fr)}
 #belanja #newProducts .product-card{display:grid;grid-template-columns:140px minmax(0,1fr);overflow:hidden}
 #belanja #newProducts .product-image{aspect-ratio:1;min-height:140px;height:100%;border-radius:0}
@@ -320,15 +309,6 @@ body:has(#chatRoom.active) .shell{padding-bottom:0}
 #healthDashboard .demo-label{font-size:9px;margin-bottom:0}
 
 /* Nemu brand purple, sampled from nemu-ai.com. */
-#belanja #promoCarousel{background:#e9e2ff}
-#belanja #promoCarousel[data-slide="1"]{background:#ded3ff}
-#belanja #promoCarousel[data-slide="2"]{background:#f0ebff}
-#belanja #promoCarousel:before{border-color:#704bfd0d}
-#belanja #promoCarousel h2{color:#2d1855}
-#belanja #promoCarousel .deal-kicker{background:#ffffffb3;color:#5935ce}
-#belanja #promoCarousel .cta-white{background:#704bfd;color:#fff}
-#belanja #promoCarousel .cta-white span{background:#fff;color:#704bfd}
-#promoCarousel .promo-pagination button[aria-current="true"]:before{background:#704bfd}
 
 /* Shoppable product cards: clear offers and a distinct next action. */
 #belanja #newProducts .arrival-card{background:#fff;border:1px solid #ece6f3;border-radius:20px;overflow:hidden;box-shadow:0 4px 14px #42276a06;transition:border-color .18s,box-shadow .18s}
@@ -382,10 +362,6 @@ body:has(#chatRoom.active) .shell{padding-bottom:0}
 .promo-affiliate{background:linear-gradient(155deg,#fff5dd,#f5e6bf);border-color:#ecddb9}
 .discovery-promo .live-pill{font-size:8px;letter-spacing:.9px}
 .discovery-promo .live-copy h3{font-size:19px}
-
-#belanja #promoCarousel[data-slide="3"]{background:#ffe28c}
-#belanja #promoCarousel[data-slide="3"] h2{color:#302347}
-#belanja .promo-pagination{min-width:142px}
 .mission-shortcut{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid #e5dafa;background:#f2ecff;color:#613acd;border-radius:14px;padding:14px;margin:16px 0;font-size:11px}.mission-shortcut b{font-size:10px}
 #dailyMissions{max-width:720px;margin:auto}.mission-hero{position:relative;overflow:hidden;border-radius:24px;background:#ffe28c;padding:26px 22px;margin:12px 0 16px}.mission-hero>span{font-size:9px;letter-spacing:1.8px;font-weight:800}.mission-hero h1{font-size:28px;line-height:1.15;letter-spacing:-1px;position:relative;z-index:1;margin:12px 0}.mission-hero p{max-width:58%;font-size:11px;position:relative;z-index:1}.mission-hero img{position:absolute;width:42%;height:90%;object-fit:contain;right:-7px;bottom:0}.mission-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:26px}.mission-stats>div{padding:18px;border:1px solid #e9e0f6;border-radius:16px;background:white}.mission-stats strong{display:block;font-size:27px;color:#704bfd;letter-spacing:-1px}.mission-stats span{font-size:10px;color:#92879c}#missionDate{font-size:11px;color:#9a8aa8}.mission-item{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #ece6f3;border-radius:17px;padding:15px 12px;margin-bottom:10px}.mission-icon{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:#f1ebff;color:#704bfd;font-size:22px;flex:none}.mission-info{flex:1;min-width:0}.mission-info h3{margin:0;font-size:13px}.mission-info p{font-size:10px;color:#928598;margin:5px 0 9px}.mission-info small{font-size:9px;color:#8b799c}.mission-meter{height:4px;border-radius:5px;background:#eee8f6;overflow:hidden;margin-bottom:5px}.mission-meter i{display:block;height:100%;background:#9874f3}.mission-item button{border:0;border-radius:10px;background:#704bfd;color:white;padding:9px 11px;font-size:10px;font-weight:750;flex:none}.mission-item button:disabled{background:#f0edf5;color:#a497af;cursor:default}.mission-note{font-size:10px;line-height:1.7;color:#a293ad;margin:18px 5px}
 
@@ -462,9 +438,6 @@ body.health-onboarding-active .health-onboarding{background:#eee6ff;color:#35204
 #healthDashboard>.daily-card:has(#foodLog) #foodLog{display:none}
 #healthDashboard[data-tab="menu"]>:not(.health-nav):not(#healthMenuPanel),#healthDashboard[data-tab="analytics"]>:not(.health-nav):not(#healthAnalyticsPanel){display:none}
 .health-extra{padding:10px 0 24px}.health-extra h2{font-size:25px;letter-spacing:-.8px;margin:0 0 6px}.health-empty{padding:24px 18px;background:#f2edf9;border-radius:16px;color:#93829e;font-size:12px;line-height:1.7;margin:20px 0}.analytics-tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}.analytics-tiles article{padding:20px;background:#eee6ff;border-radius:18px}.analytics-tiles span{font-size:10px;color:#8b729f}.analytics-tiles strong{display:block;color:#704bfd;font-size:36px;margin-top:12px}.analytics-tiles small{color:#9b88ae;font-size:10px}.analytics-progress{padding:22px;background:#fff;border:1px solid #e9e0f2;border-radius:18px}.analytics-progress b{font-size:12px}.analytics-progress>span{float:right;color:#704bfd;font-size:12px}.analytics-progress progress{width:100%;height:9px;accent-color:#704bfd;margin:20px 0 8px}.analytics-progress p{font-size:10px;line-height:1.6;color:#9b8aaa}#healthPhotoPreview{width:100%;max-height:240px;object-fit:contain;margin-top:16px;border-radius:14px}#healthPhotoPreview[hidden]{display:none}
-
-.food-promos{margin:2px 0 19px}.food-promo-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:22px}.food-promo-track::-webkit-scrollbar{display:none}.food-promo{flex:0 0 100%;min-width:0;min-height:208px;display:flex;align-items:center;position:relative;overflow:clip;scroll-snap-align:start;background:#e9e1ff;padding:23px 19px;isolation:isolate}.food-promo>div{width:60%;position:relative;z-index:2}.food-promo>div>span{display:inline-block;font-size:8px;letter-spacing:1px;font-weight:800;color:#7651b6;margin-bottom:10px}.food-promo h2{font-size:24px;line-height:1.17;letter-spacing:-.8px;color:#352247;margin:0 0 10px}.food-promo p{font-size:10px;line-height:1.6;max-width:170px;color:#887294;margin:0 0 15px}.food-promo button{border:0;border-radius:999px;background:#704bfd;color:white;font-size:10px;font-weight:750;padding:10px 13px;display:inline-flex;gap:17px;align-items:center}.food-promo button b{font-size:17px;line-height:1}.food-promo img{position:absolute;right:-24px;width:47%;height:180px;object-fit:cover;border-radius:50%;box-shadow:0 9px 28px #49312e20;transform:rotate(-9deg)}.food-promo-coffee{background:#f3e8db}.food-promo-coffee img{transform:rotate(8deg)}.food-promo-reward{background:#eee6ff}.food-promo-reward img{right:-4px;width:43%;height:90%;object-fit:contain;border-radius:0;box-shadow:none;transform:none}.food-promo-dots{display:flex;justify-content:center;gap:4px;margin-top:8px}.food-promo-dots button{width:27px;height:19px;border:0;background:none;padding:6px;display:grid;place-items:center}.food-promo-dots button:before{content:'';display:block;width:6px;height:6px;border-radius:9px;background:#ded6eb}.food-promo-dots button[aria-current="true"]:before{width:20px;background:#704bfd}
-@media(min-width:681px){.food-promo{min-height:245px;padding:30px}.food-promo h2{font-size:32px}.food-promo img{right:8%;width:220px;height:220px}}
 
 /* A calmer health home: one primary action, softer supporting surfaces. */
 #healthDashboard .fitness-heading{background:transparent;border:0;border-radius:0;padding:14px 4px 21px;margin:0;min-height:177px}
@@ -578,6 +551,9 @@ body.health-onboarding-active .health-onboarding{background:#eee6ff;color:#35204
 
 #foodGrid>.food-shop-pick{grid-column:1/-1;margin:6px 0 12px}
 </style>
+<link rel="stylesheet" href="nemu-experience.css?v=20261008-mobile37">
+<link rel="stylesheet" href="nemu-responsive.css?v=20261008-summary2">
+<link rel="stylesheet" href="nemu-banners.css?v=20261008-v2">
 </head>
 <body>
 <div class="shell">
@@ -590,7 +566,7 @@ body.health-onboarding-active .health-onboarding{background:#eee6ff;color:#35204
     <div class="rail-spacer"></div><button aria-label="Profil"><svg><use href="assets/sprite.svg#user"/></svg><span>Profil</span></button>
   </aside>
   <main class="main">
-    <header class="topbar"><div class="wordmark">nemu<b>.ai</b></div><button class="ask-nemu" id="askNemu" aria-label="Tanya Nemu, buka chat asisten"><span class="nemu-speech">Tanya Nemu</span><span class="nemu-orbit"><img src="assets/promo-tote-mascot.png" alt="Maskot ungu Nemu"></span></button><div class="location"><svg><use href="assets/sprite.svg#pin"/></svg><span>Tangerang</span></div>
+    <header class="topbar"><div class="wordmark"><img src="assets/nemu-wordmark-official.svg" alt="nemu.ai" width="99" height="19"></div><button class="ask-nemu" id="askNemu" aria-label="Tanya Nemu, buka chat asisten"><span class="nemu-speech">Tanya Nemu</span><span class="nemu-orbit"><img src="assets/promo-tote-mascot.png" alt="Maskot ungu Nemu"></span></button><div class="location"><svg><use href="assets/sprite.svg#pin"/></svg><span>Tangerang</span></div>
       <div class="store-search"><label class="global-search"><svg><use href="assets/sprite.svg#search"/></svg><input id="globalSearch" placeholder="Cari barang atau brand favoritmu" aria-label="Cari barang atau brand"></label><button class="store-filter" type="button" id="storeFilter" aria-label="Urutkan barang"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></svg></button></div>
       <button class="icon-button" id="inboxButton" aria-label="Keranjang"><svg><use href="assets/sprite.svg#cart"/></svg></button><button class="avatar-small" aria-label="Profil Ferry">F</button>
     </header>
@@ -898,5 +874,9 @@ $('#liveSellerStrip').onclick=e=>{const b=e.target.closest('[data-live-seller]')
 $('#liveDemoContent').onclick=e=>{const b=e.target.closest('[data-live-add]');if(b)addShopItem(Number(b.dataset.liveAdd))};
 $('#liveDemoBack').onclick=()=>$('.mobile-tabs [data-view="belanja"]').click();
 </script>
-</body>
+<script src="nemu-experience.js?v=20261008-summary2"></script>
+<script src="nemu-challenge.js?v=33"></script>
+<script src="nemu-account.js"></script>
+<script src="nemu-quick-actions.js?v=24"></script>
+<script src="nemu-layout.js?v=19"></script><script src="nemu-food-ai.js?v=23"></script><script src="nemu-food-design.js?v=31"></script><script src="nemu-shop-design.js?v=21"></script><script src="nemu-banners.js?v=20261008-v2"></script><script src="nemu-ai-chat.js?v=23"></script><script src="nemu-shop-mission.js?v=27"></script><script src="nemu-programs.js"></script></body>
 </html>
